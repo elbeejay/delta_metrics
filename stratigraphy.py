@@ -1,6 +1,7 @@
 import numpy as np
+import cPickle as pickle
 
-def sedimentograph(strata, step_radius = 5):
+def sedimentograph(strata, step_radius = 5, save_file = True, sroot = './', fname = 'mapfile'):
 
     zmaxn = strata.shape[2]
 
@@ -44,6 +45,9 @@ def sedimentograph(strata, step_radius = 5):
     seds['sand_frac_by_vol'] = sand_vol / (sand_vol + mud_vol)
     seds['sand_vol'] = sand_vol
     seds['mud_vol'] = mud_vol
+    
+    if save_file:
+		pickle.dump( seds, open( sroot + fname + 'seds' + '.p', "wb") )
     
     return seds
 
