@@ -1,5 +1,6 @@
 import numpy as np
 import cPickle as pickle
+import scipy.io as sio
 
 def sedimentograph(strata, step_radius = 5, save_file = True, sroot = './', fname = 'mapfile'):
 
@@ -48,6 +49,6 @@ def sedimentograph(strata, step_radius = 5, save_file = True, sroot = './', fnam
     
     if save_file:
 		pickle.dump( seds, open( sroot + fname + 'seds' + '.p', "wb") )
-    
+
     return seds
 
