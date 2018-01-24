@@ -131,8 +131,8 @@ def fractional_areas(mapfile):
     area['wet'] = mapfile['allwetmap'].sum()
     area['channel'] = mapfile['channelmap'].sum()
 
-    area['frac_wet'] = area['wet'] / area['land']
-    area['frac_channel'] = area['channel'] / area['land']
+    area['frac_wet'] = float(area['wet']) / float(area['land'])
+    area['frac_channel'] = float(area['channel']) / float(area['land'])
     area['length_wet'] = mapfile['edgemap'].sum()
     
     return area
